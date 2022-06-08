@@ -1,0 +1,19 @@
+{% set name = 'camera_hikmvs' -%}
+{% set ver = '3.4' -%}
+package:
+  name: {{ name }}
+  version: {{ ver }}
+
+source:
+  git_url: {{ qtgit }}/dd_group/camera_hikmvs.git
+
+build:
+  number: {{ bn }}
+  string: {{ bs }}
+  run_exports:
+    - {{ pin_subpackage(name, max_pin="x.x") }}
+
+about:
+  home: hikvision
+  license: hikvision
+  summary: hikvision
